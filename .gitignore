@@ -1,0 +1,5 @@
+#ignore the followed file
+#ignore .gitignore
+#.gitignore  
+#ignore tmp file created by gedit
+*.*~
