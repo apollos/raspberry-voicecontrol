@@ -1,0 +1,4 @@
+import voiceControlTests
+
+
+voiceControlTests.testRecgAudioType()
