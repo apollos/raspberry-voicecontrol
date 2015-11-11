@@ -3,3 +3,4 @@
 #.gitignore  
 #ignore tmp file created by gedit
 *.*~
+*.log

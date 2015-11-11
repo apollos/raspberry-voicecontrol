@@ -1,11 +1,27 @@
+import logging
+import logging.config
+import os
+import sys
+
 from nose.tools import *
-import voiceRecog
+from voiceRecog import *
 
-def setup():
-    print "SETUP!"
+logging.config.fileConfig("logging.conf")
 
-def teardown():
-    print "Tear Down!"
+# create logger
+logger = logging.getLogger("voiceCongrolTests")
 
-def test_basic():
-    print "I RAN!"
+def testRecgAudioType():
+    filelist = os.listdir("audio")
+    logger.info("Check the followed file(s):\n" + "\n".join(filelist))
+    for filename in filelist:
+        flacFile = flacType()
+        flacFileInfo = flacFile.getAttribute("audoi/"+filename)
+        if flacFileInfo is None:
+            logger.info("audoi/"+filename + " is not a flac file")
+            continue
+        else:
+            logger.info("audoi/"+filename + " Attributes as followed: audioFormat - %s, sampleRate - %5d, audioLanguage - %s, audio length - %d" % (flacFileInfo.audioFormat, flacFileInfo.sampleRate, flacFileInfo.audioLanguage, flacFileInfo.length))
+
+            
+        
