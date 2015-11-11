@@ -1,3 +1,2 @@
-
-_all_ = ["audioType"]
+_all_ = ['flacType']
 

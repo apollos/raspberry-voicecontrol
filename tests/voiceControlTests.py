@@ -2,9 +2,11 @@ import logging
 import logging.config
 import os
 import sys
-
 from nose.tools import *
+
+sys.path.append("..")
 from voiceRecog import *
+
 
 logging.config.fileConfig("logging.conf")
 
